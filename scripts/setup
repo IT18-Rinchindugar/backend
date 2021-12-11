@@ -1,0 +1,8 @@
+#! /bin/bash
+#
+# Setups the project
+#
+
+set -e # exit if any commands returns a non-zero exit code.
+
+echo "Princhin"

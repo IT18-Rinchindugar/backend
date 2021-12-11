@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  api:
+    image: node:14.15.1
+    command: yarn start
+    working_dir: /app
+    volumes:
+        - $PWD:/app
+    ports:
+        - "8000:8000"
+        
+  db:
+    image: postgres:12.0
+    environment:
+        POSTGRES_DB: "app"
+        POSTGRES_USER: "appuser"
+        POSTGRES_PASSWORD: "apppass"
+    ports:
+        - "5432:5432"
+      
+  redis:
+    image: redis:5.0.6
+    ports:
+      - "6379:6379"
